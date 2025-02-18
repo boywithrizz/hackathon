@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-const MONGODB_URI = "mongodb://localhost:27017/collegehub"; // Replace with your MongoDB URI
+const MONGODB_URI = "mongodb+srv://mishrashivam:abcd1234@college-hub.jdfcw.mongodb.net/?retryWrites=true&w=majority&appName=College-Hub"; // Replace with your MongoDB URI
 
 mongoose
   .connect(MONGODB_URI)
