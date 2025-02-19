@@ -31,7 +31,7 @@ app.post("/api/students", async (req: Request, res: Response) => {
   try {
     const newStudent = new Student(req.body);
     const savedStudent = await newStudent.save();
-    res.status(201).json(savedStudent);
+    res.status(201).json(savedStudent);   //json(savedStudent) sends the newly created student as a JSON response.
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
