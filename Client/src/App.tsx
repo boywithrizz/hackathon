@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 import './App.css'
+=======
+>>>>>>> refs/remotes/origin/main
 import React, { useState } from "react";
 import axios from "axios";
 

@@ -7,7 +7,7 @@ import cors from "cors";
 import studentRoutes from "./Routes/studentRoutes"; // Import student routes
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ?? 5000;
 
 // Middleware
 app.use(cors());
@@ -39,5 +39,22 @@ app.get("/", (req: Request, res: Response) => {
 
 // Start Server
 app.listen(PORT, () => {
+<<<<<<< HEAD
   console.log(`🚀 Server is running on port ${PORT}`);
+=======
+  console.log(`Server is running on port ${PORT}`);
+});
+
+import Student from "./models/Student";
+
+app.post("/api/students", async (req: Request, res: Response) => {
+  try {
+    const newStudent = new Student(req.body);
+    const savedStudent = await newStudent.save();
+    res.status(201).json(savedStudent); //json(savedStudent) sends the newly created student as a JSON response.
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+>>>>>>> refs/remotes/origin/main
 });
