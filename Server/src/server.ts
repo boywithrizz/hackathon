@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
@@ -10,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-const MONGODB_URI = "mongodb+srv://mishrashivam:abcd1234@college-hub.jdfcw.mongodb.net/?retryWrites=true&w=majority&appName=College-Hub"; // Replace with your MongoDB URI
+const MONGODB_URI = process.env.MONGODB_URI as string; // Replace with your MongoDB URI
 
 mongoose
   .connect(MONGODB_URI)
