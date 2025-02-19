@@ -1,17 +1,5 @@
-<<<<<<< HEAD
-import Navbar from './Navbar/Navbar.tsx'
+
 import './App.css'
-
-function App() {
-
-  return (
-    <>
-      <div>
-        <Navbar/>
-      </div>
-    </>
-  )
-=======
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -19,7 +7,6 @@ interface Student {
   name: string;
   age: number;
   major: string;
->>>>>>> refs/remotes/origin/main
 }
 
 const App: React.FC = () => {
@@ -53,6 +40,7 @@ const App: React.FC = () => {
 
   return (
     <div>
+      
       <h1>Add Student</h1>
       <form onSubmit={handleSubmit}>
         {/* ... input fields ... */}
@@ -85,6 +73,7 @@ const App: React.FC = () => {
           Add Student
         </button>
       </form>
+      
     </div>
   );
 };
