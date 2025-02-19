@@ -4,7 +4,6 @@ import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
-import path from "path";
 
 const app = express();
 const PORT = process.env.PORT || 5000;

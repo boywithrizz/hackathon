@@ -1,0 +1,2 @@
+- To send a POST request
+$ http POST localhost:5000/api/students name="Shivam" age=18  major="CSE"
