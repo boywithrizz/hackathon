@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ?? 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -32,7 +32,7 @@ app.post("/api/students", async (req: Request, res: Response) => {
   try {
     const newStudent = new Student(req.body);
     const savedStudent = await newStudent.save();
-    res.status(201).json(savedStudent);   //json(savedStudent) sends the newly created student as a JSON response.
+    res.status(201).json(savedStudent); //json(savedStudent) sends the newly created student as a JSON response.
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
