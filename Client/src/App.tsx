@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import Navbar from './Navbar/Navbar.tsx'
-import './App.css'
-
-function App() {
-
-  return (
-    <>
-      <div>
-        <Navbar/>
-      </div>
-    </>
-  )
-=======
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -19,7 +5,6 @@ interface Student {
   name: string;
   age: number;
   major: string;
->>>>>>> refs/remotes/origin/main
 }
 
 const App: React.FC = () => {
