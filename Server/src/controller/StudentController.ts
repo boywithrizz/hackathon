@@ -1,7 +1,7 @@
 import Student from "../models/Student";
 import { Request, Response } from "express";
 
-export const Register_Student = async (req:Request,res:Response)=>{
+const RegisterStudent = async (req:Request,res:Response)=>{
     console.log(req.body);
     try {
         const newStudent = new Student(req.body);
@@ -15,3 +15,4 @@ export const Register_Student = async (req:Request,res:Response)=>{
     console.log("Register_Student");
 }
 
+export default RegisterStudent

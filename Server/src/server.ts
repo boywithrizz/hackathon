@@ -1,43 +1,35 @@
 import dotenv from "dotenv";
 dotenv.config();
-import express, { Request, Response } from "express";
+
+import express, { Request, Response,Application } from "express";
 import Connect_To_DB from "./utils/Db";
 import bodyParser from "body-parser";
 import cors from "cors";
-import studentsRoute from "./routes/students_route"; // Import the router
+import StudentsRoute from "./Routes/StudentRoutes"; // Import the router
+import DocumentsRoute from "./Routes/DocumentsRoutes";
 
-const app = express();
+
+const app: Application = express();
 const PORT = process.env.PORT || 5000;
 
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
-
+app.use(require("express-status-monitor")()); //// just for monitoring the server status
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello from College Hub Backend!");
   console.log("Hello from College Hub Backend!");
 });
 
+
 Connect_To_DB();
 
 
-app.use("/api/students", studentsRoute); // Use the router
+app.use("/api/students", StudentsRoute); // Use the router
+app.use("/api/documents", DocumentsRoute); // Use the router
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-
-
-// import Student from "./models/Student";
-
-// app.post("/api/students", async (req: Request, res: Response) => {
-//   try {
-//     const newStudent = new Student(req.body);
-//     const savedStudent = await newStudent.save();
-//     res.status(201).json(savedStudent);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: "Server Error" });
-//   }
-// });
