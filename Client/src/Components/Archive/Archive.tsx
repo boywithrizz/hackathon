@@ -1,8 +1,13 @@
 import { useState } from "react";
 import React from "react";
+import axios from "axios";
 
 export default function UploadArchive() {
+
   const [file, setFile] = useState<File | null>(null);
+
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
   const handleUpload = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -14,18 +19,21 @@ export default function UploadArchive() {
 
     const formData = new FormData();
     formData.append("file", file); // Append file to FormData
+    console.log(formData)
 
     try {
-      const response = await fetch("http://localhost:5000/upload", {
-        method: "POST",
-        body: formData,
+      const response = await axios.post(`${apiUrl}/documents/upload-archive`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
+      console.log(response)
 
-      if (!response.ok) {
+      if (!response.data.success) {
         throw new Error("File upload failed");
       }
-
       alert("File Uploaded Successfully!");
+      setFile(null);
     } catch (error) {
       console.error("Upload error:", error);
       alert("Upload failed!");
@@ -36,13 +44,13 @@ export default function UploadArchive() {
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
         <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">Upload a File</h2>
-        <form onSubmit={handleUpload} className="flex flex-col gap-4">
+        <form onSubmit={handleUpload} className="flex flex-col gap-4" method="POST" encType="multipart/form-data">
           <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition">
             <div className="flex flex-col items-center text-gray-600">
               <svg className="w-10 h-10 text-blue-500 mb-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 16V10a4 4 0 118 0v6m-5 4h6a2 2 0 002-2V8a2 2 0 00-2-2h-1m-6 0H9a2 2 0 00-2 2v10a2 2 0 002 2h1"></path>
               </svg>
-              <span className="text-sm">Click to upload or drag a file</span>
+              <span className="text-sm">{file?file.name:"Click to upload or drag a file"}</span>
             </div>
             <input
               type="file"
