@@ -1,1 +1,104 @@
 @import "tailwindcss";
+
+/* ------- Utility Classes--------*/
+.hide-element{
+    display: none !important;
+}
+
+#root{
+    min-height: 100vh;
+}
+
+/* ----------Code to hide the scrollbar in the browser Starts-------- */
+
+html {
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body{
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+}
+body::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    display: none;
+  }
+
+/* ----------Code to hide the scrollbar in the browser Completed-------- */
+
+
+
+/* ----------Code for NavBar Starts-------- */
+
+.nav-links-list{
+    cursor: pointer;
+}
+
+.nav-links-list li::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s;
+}
+
+.nav-links-list li:hover::after{
+    width: 100%;
+}
+
+       /* Dropdown Menu starts*/
+
+.nav-features-dropdown{
+        height: 0px;
+        transition: height 0.5s;
+        overflow: hidden;
+    }
+
+.nav-features:hover .nav-features-dropdown {
+        height: 210px;
+    }
+    
+.nav-features-dropdown ul li{
+        cursor: pointer;
+    }
+
+.nav-features-dropdown ul li:hover{
+        color: #c8c7c7;
+    }
+
+.nav-features-dropdown-icons {
+    height: 40px;
+    width: 30px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.nav-features-dropdown-icons .fa-xmark{
+    line-height: 40px !important;
+}
+
+.nav-features .nav-features-dropdown-icons:hover .fa-bars{
+    display: none !important;
+}
+.nav-features .nav-features-dropdown-icons:hover .fa-xmark{
+    display: block !important;
+}
+
+  /* ~ only works with the sibling which comes after the element */
+
+.nav-features-dropdown:hover ~ .nav-features-dropdown-icons .fa-bars{
+    display: none !important;
+}
+.nav-features-dropdown:hover ~ .nav-features-dropdown-icons .fa-xmark{
+    display: block !important;
+}
+
+        /* Dropdown Menu Ends */
+
+
