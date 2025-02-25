@@ -37,7 +37,7 @@ const Navbar = () => {
                         <ul className="dropdown absolute top-full left-0 bg-gray-200 min-w-[200px] list-none p-2 m-0 shadow-md opacity-0 invisible transition-opacity duration-300 hei">
                             <li>
                                 <NavLink
-                                    to="/alumniconnect"
+                                    to="/almaconnect"
                                     className="text-gray-800 block px-4 py-2 hover:bg-gray-300 hover:text-black transition-colors duration-300"
                                 >
                                     AlmaConnect

@@ -1,0 +1,440 @@
+.alma-connect-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .ac-sidebar {
+    flex: 1;
+    max-width: 280px;
+  }
+  
+  .ac-main-content {
+    flex: 3;
+  }
+  
+  .ac-right-sidebar {
+    flex: 1;
+    max-width: 280px;
+  }
+  
+  .ac-search-section {
+    margin-bottom: 30px;
+  }
+  
+  .ac-search-section h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #0a66c2;
+  }
+  
+  .ac-search-section p {
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  /* SearchBar Styles */
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-main {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .search-button, .advanced-toggle {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .search-button {
+    background-color: #0a66c2;
+    color: white;
+  }
+  
+  .advanced-toggle {
+    background-color: #f3f2ef;
+    color: #666;
+  }
+  
+  .advanced-search {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .filter-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+  }
+  
+  .filter-group input, .filter-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* AlumniList Styles */
+  .alumni-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .alumni-card {
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+  }
+  
+  .alumni-photo {
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .alumni-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .online-indicator {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  .alumni-info {
+    flex: 1;
+  }
+  
+  .alumni-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #0a66c2;
+  }
+  
+  .alumni-title {
+    margin: 0 0 5px 0;
+    font-weight: 600;
+  }
+  
+  .alumni-details, .connection-info {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .alumni-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .view-profile-btn, .message-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .view-profile-btn {
+    background-color: #0a66c2;
+    color: white;
+  }
+  
+  .message-btn {
+    background-color: white;
+    color: #0a66c2;
+    border: 1px solid #0a66c2;
+  }
+  
+  .no-results {
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #666;
+  }
+  
+  /* ProfileCard Styles */
+  .profile-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-header {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-name {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+  }
+  
+  .profile-title, .profile-details {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .profile-actions {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    text-align: center;
+  }
+  
+  .profile-link {
+    color: #0a66c2;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  /* NetworkStats Styles */
+  .network-stats {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .network-stats h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+  }
+  
+  .stat-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+  
+  .stat-item a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .stat-value {
+    font-weight: 600;
+    color: #0a66c2;
+  }
+  
+  .stat-label {
+    color: #666;
+  }
+  
+  /* RecentConversations Styles */
+  .recent-conversations {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .recent-conversations h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+  }
+  
+  .conversation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .conversation-item {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .conversation-item:hover {
+    background-color: #f3f2ef;
+  }
+  
+  .conversation-preview h4 {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: #0a66c2;
+  }
+  
+  .message-preview {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .message-time {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .no-messages {
+    text-align: center;
+    color: #999;
+    padding: 10px;
+  }
+  
+  .view-all-messages {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #0a66c2;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  /* SuggestedConnections Styles */
+  .suggested-connections {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .suggested-connections h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+  }
+  
+  .suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .suggestion-card {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .suggestion-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .suggestion-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  .suggestion-info {
+    flex: 1;
+  }
+  
+  .suggestion-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+  }
+  
+  .suggestion-info p {
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .mutual-connections {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .connect-btn {
+    align-self: center;
+    padding: 6px 12px;
+    background-color: white;
+    color: #0a66c2;
+    border: 1px solid #0a66c2;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    
+  }
+  
+.connect-btn:hover {
+    background-color: #0a66c2;
+    color: white;
+  }
+  /* Responsive styles */
+  @media (max-width: 1000px) {
+    .alma-connect-container {
+      flex-direction: column;
+    }
+    
+    .ac-sidebar, .ac-right-sidebar {
+      max-width: 100%;
+    }
+    
+    .advanced-search {
+      grid-template-columns: 1fr;
+    }
+  }

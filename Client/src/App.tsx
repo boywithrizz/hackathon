@@ -1,20 +1,43 @@
 import './App.css'
 import React from "react";
 import Navbar from './Components/Navbar/Navbar';
-import Register  from './Components/Students/Register';
-import { Route,Routes } from 'react-router-dom';
+import AlmaConnect from './Components/AlmaConnect/AlmaConnect';
+import Register from './Components/Students/Register';
 import UploadArchive from './Components/Archive/Archive';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const App: React.FC = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <Navbar />
+          <UploadArchive />
+        </>
+      ),
+    },
+    {
+      path: "/almaconnect",
+      element: (
+        <>
+          <AlmaConnect />
+        </>
+      ),
+    },
+    {
+      path: "/register",
+      element: (
+        <>
+          <Navbar />
+          <Register />
+        </>
+      ),
+    },
+  ]);
 
   return (
-    <>
-    <Navbar/>
-    <Routes>
-      <Route path='/' element={<UploadArchive/>}/>
-      <Route path="/register" element={<Register/>}/>
-    </Routes>
-    </>
+    <RouterProvider router={router} />
   );
 };
 
